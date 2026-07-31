@@ -9,19 +9,25 @@ in the installation corresponds to a story here.
 
 ## Structure
 
-- `index.html` — page structure (hero, about, garden, entries, footer)
-- `style.css` — the dark, red-and-black visual language
-- `stories.js` — **the archive's content**, as a plain array of objects
-- `script.js` — renders the garden and entries from `stories.js`, handles
-  interaction (click a flower → jump to and expand its story)
+- `index.html` (root) — redirects to `/archive/`
+- `CNAME` — custom domain config for GitHub Pages (`crimsonarchive.astrolee.com`)
+- `archive/index.html` — the site itself (hero, about, garden, entries, footer)
+- `archive/style.css` — the dark, red-and-black visual language
+- `archive/stories.js` — **the archive's content**, as a plain array of objects
+- `archive/script.js` — renders the garden and entries from `stories.js`,
+  handles interaction (click a flower → jump to and expand its story)
 
-No build step or framework — open `index.html` in a browser, or deploy the
-folder as-is to any static host.
+No build step or framework — open `archive/index.html` in a browser, or
+deploy the folder as-is to any static host.
 
 ## Adding a story
 
-Open `stories.js` and add a new object to the `STORIES` array, following the
-shape of the existing entries:
+You can edit this directly on GitHub: open `archive/stories.js` in the repo,
+click the pencil (edit) icon, make your change, and commit to `main` — the
+live site rebuilds automatically within a minute or two.
+
+Add a new object to the `STORIES` array, following the shape of the existing
+entries:
 
 ```js
 {
@@ -45,4 +51,6 @@ automatically.
 ## Deploying
 
 The site is static, so any host works (Vercel, Netlify, GitHub Pages, etc).
-It's currently deployed via Vercel.
+It's currently deployed via GitHub Pages at
+[crimsonarchive.astrolee.com/archive](https://crimsonarchive.astrolee.com/archive),
+with a CNAME DNS record at the registrar pointing to `astroslee.github.io`.
