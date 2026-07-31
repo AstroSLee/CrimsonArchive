@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Crimson Archive</title>
+<meta name="description" content="The Crimson Archive — a projected garden of red flowers, and a living archive of stories of bloodshed and sacrifice in the fight for Korean independence." />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="eyebrow">An installation, and an archive</p>
+      <h1>The Crimson Archive</h1>
+      <p class="hero-sub">
+        A projected garden of red flowers — each one a life, a stand, a story
+        from the fight for Korean independence.
+      </p>
+      <a class="scroll-cue" href="#about" aria-label="Scroll to learn more">
+        <span></span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="about">
+      <div class="about-inner">
+        <h2>About this archive</h2>
+        <p>
+          <strong>The Crimson Archive</strong> is a projected garden installation of red
+          flowers — a field of blossoms that stand in for the blood spilled, and the
+          courage spent, in the fight for Korea's independence during the Japanese
+          colonial period. Red, here, is not only mourning. It is also the color of
+          something alive: conviction, resistance, and a freedom that had to be
+          fought for.
+        </p>
+        <p>
+          This website is the archive's companion — a place to keep the stories
+          behind the flowers, so that the installation points to something real.
+          Each entry below is a documented person or event from that history. It is
+          a living archive: new stories are added over time.
+        </p>
+      </div>
+    </section>
+
+    <section id="garden" class="garden">
+      <div class="garden-inner">
+        <h2>The Garden</h2>
+        <p class="garden-hint">Select a flower to read its story.</p>
+        <div class="flower-field" id="flower-field">
+          <!-- populated by script.js from stories.js -->
+        </div>
+      </div>
+    </section>
+
+    <section id="entries" class="entries">
+      <div class="entries-inner" id="entries-list">
+        <!-- populated by script.js from stories.js -->
+      </div>
+    </section>
+
+    <section class="contribute">
+      <div class="contribute-inner">
+        <h2>Add a story</h2>
+        <p>
+          This archive is meant to grow. If you know a story that belongs here —
+          a name, a place, an event from the fight for Korean independence — it can
+          be added directly to the archive's source file, <code>stories.js</code>,
+          with no rebuild required. See the project <code>README.md</code> for the
+          exact format.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>The Crimson Archive — a projected garden installation and living archive.</p>
+    <p class="footer-note">
+      Historical entries are drawn from documented public history of the Korean
+      independence movement. Sources are noted per entry where applicable.
+    </p>
+  </footer>
+
+  <script src="stories.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
