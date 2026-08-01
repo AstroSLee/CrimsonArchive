@@ -1,13 +1,13 @@
 // The Crimson Archive — renders the flower garden and story entries from stories.js
 
-function flowerSVG() {
+function flowerSVG(extraClass = "") {
   const petals = Array.from({ length: 5 }, (_, i) => {
     const angle = (360 / 5) * i;
-    return `<ellipse cx="24" cy="12" rx="7" ry="12" fill="currentColor"
+    return `<path d="M24,2 L30,16 L24,24 L18,16 Z" fill="currentColor"
       transform="rotate(${angle} 24 24)" opacity="0.9" />`;
   }).join("");
   return `
-    <svg class="flower-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <svg class="flower-svg ${extraClass}" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <g style="color: var(--petal)">${petals}</g>
       <circle cx="24" cy="24" r="5" fill="#f2c94c" />
     </svg>
@@ -104,9 +104,15 @@ function wireBloomOnScroll() {
   flowers.forEach((f) => observer.observe(f));
 }
 
+function buildScrollCue() {
+  const cue = document.getElementById("scroll-flower");
+  if (cue) cue.innerHTML = flowerSVG("scroll-flower-svg");
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   buildGarden();
   buildEntries();
+  buildScrollCue();
   wireInteractions();
   wireBloomOnScroll();
 });

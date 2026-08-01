@@ -110,26 +110,24 @@ code {
 
 .scroll-cue {
   display: inline-flex;
-  width: 1.5rem;
-  height: 2.5rem;
-  border: 1.5px solid var(--ink-faint);
-  border-radius: 999px;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  padding-top: 0.4rem;
+  text-decoration: none;
 }
 
 .scroll-cue span {
-  width: 3px;
-  height: 6px;
-  border-radius: 999px;
-  background: var(--crimson-bright);
-  animation: scrolldown 1.6s ease-in-out infinite;
+  display: inline-block;
+  animation: handscroll 1.6s ease-in-out infinite;
 }
 
-@keyframes scrolldown {
-  0% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(10px); opacity: 0; }
+.scroll-flower-svg {
+  width: 28px;
+  height: 28px;
+}
+
+@keyframes handscroll {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
 }
 
 /* ---------- Sections ---------- */
